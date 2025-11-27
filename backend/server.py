@@ -79,12 +79,14 @@ from modules.users.routes import router as users_router
 from modules.hair_profiles.routes import router as hair_profiles_router
 from modules.ingredients.routes import router as ingredients_router
 from modules.products.routes import router as products_router
+from modules.scans.routes import router as scans_router
 
 app.include_router(auth_router, prefix=settings.API_V1_PREFIX)
 app.include_router(users_router, prefix=settings.API_V1_PREFIX)
 app.include_router(hair_profiles_router, prefix=settings.API_V1_PREFIX)
 app.include_router(ingredients_router, prefix=settings.API_V1_PREFIX)
 app.include_router(products_router, prefix=settings.API_V1_PREFIX)
+app.include_router(scans_router, prefix=settings.API_V1_PREFIX)
 
 # Health check endpoint
 @app.get("/health")
