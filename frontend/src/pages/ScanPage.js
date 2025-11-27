@@ -38,8 +38,7 @@ function ScanPage() {
       });
       navigate(`/results/${response.data.scan_id}`);
     } catch (err) {
-      const errorMsg = err.response?.data?.detail || err.response?.data?.message || err.message || 'Scan failed. Please try again.';
-      setError(typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg));
+      handleApiError(err, setError, 'Scan failed. Please try again.');
     } finally {
       setLoading(false);
     }
