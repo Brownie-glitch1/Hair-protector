@@ -37,7 +37,8 @@ function ScanPage() {
       });
       navigate(`/results/${response.data.scan_id}`);
     } catch (err) {
-      setError(err.response?.data?.detail || 'Scan failed. Please try again.');
+      const errorMsg = err.response?.data?.detail || err.response?.data?.message || err.message || 'Scan failed. Please try again.';
+      setError(typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg));
     } finally {
       setLoading(false);
     }
