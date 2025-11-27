@@ -41,6 +41,15 @@ async def startup_event():
     """Connect to MongoDB on startup"""
     logger.info("Starting up Hair Scanner API...")
     await connect_to_mongo()
+    
+    # Load ingredients into database
+    from services.ingredient_loader import load_ingredients_to_db
+    try:
+        count = await load_ingredients_to_db()
+        logger.info(f"Loaded {count} ingredients into database")
+    except Exception as e:
+        logger.warning(f"Error loading ingredients: {e}")
+    
     logger.info("API ready to accept requests")
 
 # Shutdown event
