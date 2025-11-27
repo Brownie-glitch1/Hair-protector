@@ -1,0 +1,72 @@
+[
+  {
+    "name": "denatured alcohol",
+    "category": "alcohol",
+    "heavy": false,
+    "low_porosity_safe": false,
+    "high_porosity_safe": false,
+    "scalp_safe": false,
+    "properties": ["drying", "evaporating", "irritating"],
+    "notes": "Drying alcohol. Can cause scalp irritation and hair dryness."
+  },
+  {
+    "name": "isopropyl alcohol",
+    "category": "alcohol",
+    "heavy": false,
+    "low_porosity_safe": false,
+    "high_porosity_safe": false,
+    "scalp_safe": false,
+    "properties": ["drying", "evaporating", "harsh"],
+    "notes": "Drying alcohol. Strips natural oils from hair and scalp."
+  },
+  {
+    "name": "sd alcohol",
+    "category": "alcohol",
+    "heavy": false,
+    "low_porosity_safe": false,
+    "high_porosity_safe": false,
+    "scalp_safe": false,
+    "properties": ["drying", "evaporating"],
+    "notes": "Drying alcohol. Avoid for curly/textured hair."
+  },
+  {
+    "name": "cetyl alcohol",
+    "category": "alcohol",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "conditioning", "emollient"],
+    "notes": "Fatty alcohol. Actually moisturizing and beneficial."
+  },
+  {
+    "name": "cetearyl alcohol",
+    "category": "alcohol",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "conditioning", "emulsifying"],
+    "notes": "Fatty alcohol. Safe and moisturizing."
+  },
+  {
+    "name": "stearyl alcohol",
+    "category": "alcohol",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "emollient", "thickening"],
+    "notes": "Fatty alcohol. Beneficial for hair."
+  },
+  {
+    "name": "behenyl alcohol",
+    "category": "alcohol",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "conditioning", "smoothing"],
+    "notes": "Fatty alcohol. Safe and conditioning."
+  }
+]

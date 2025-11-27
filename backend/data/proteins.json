@@ -1,0 +1,72 @@
+[
+  {
+    "name": "hydrolyzed keratin",
+    "category": "protein",
+    "heavy": false,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["strengthening", "repairing", "film-forming"],
+    "notes": "Strong protein. Excellent for damaged/high porosity hair. Can make low porosity stiff."
+  },
+  {
+    "name": "hydrolyzed wheat protein",
+    "category": "protein",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["strengthening", "moisture-binding", "volumizing"],
+    "notes": "Lighter protein. Suitable for most hair types in moderate amounts."
+  },
+  {
+    "name": "hydrolyzed silk protein",
+    "category": "protein",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["smoothing", "shine-enhancing", "moisture-retaining"],
+    "notes": "Gentle protein. Adds shine and softness."
+  },
+  {
+    "name": "hydrolyzed collagen",
+    "category": "protein",
+    "heavy": false,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["strengthening", "thickening", "film-forming"],
+    "notes": "Strong protein. Best for high porosity or damaged hair."
+  },
+  {
+    "name": "hydrolyzed soy protein",
+    "category": "protein",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["strengthening", "conditioning", "moisture-binding"],
+    "notes": "Moderate protein. Balances strength and moisture."
+  },
+  {
+    "name": "keratin",
+    "category": "protein",
+    "heavy": false,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["strengthening", "repairing", "smoothing"],
+    "notes": "Strong protein. Can cause stiffness on low porosity hair."
+  },
+  {
+    "name": "amino acids",
+    "category": "protein",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["strengthening", "moisture-binding", "gentle"],
+    "notes": "Very gentle protein building blocks. Safe for all hair types."
+  }
+]

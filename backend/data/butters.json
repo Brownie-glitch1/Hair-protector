@@ -1,0 +1,42 @@
+[
+  {
+    "name": "shea butter",
+    "category": "butter",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "sealing", "protective"],
+    "notes": "Very heavy and sealing. Can cause buildup on low porosity hair."
+  },
+  {
+    "name": "cocoa butter",
+    "category": "butter",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["sealing", "protective", "thickening"],
+    "notes": "Very heavy and difficult to wash out. Best for high porosity."
+  },
+  {
+    "name": "mango butter",
+    "category": "butter",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "softening", "protective"],
+    "notes": "Heavy butter. Can weigh down low porosity hair."
+  },
+  {
+    "name": "kokum butter",
+    "category": "butter",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "non-greasy", "regenerating"],
+    "notes": "Lighter than shea but still heavy for low porosity."
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "name": "coconut oil",
+    "category": "oil",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "penetrating", "protein-mimicking"],
+    "notes": "Can cause buildup on low porosity hair. Excellent for high porosity."
+  },
+  {
+    "name": "mineral oil",
+    "category": "oil",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": false,
+    "scalp_safe": false,
+    "properties": ["sealing", "coating", "occlusive"],
+    "notes": "Can clog pores and prevent moisture penetration. Not recommended for most hair types."
+  },
+  {
+    "name": "petrolatum",
+    "category": "oil",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": false,
+    "scalp_safe": false,
+    "properties": ["sealing", "coating", "occlusive"],
+    "notes": "Petroleum jelly derivative. Can clog scalp and prevent moisture."
+  },
+  {
+    "name": "castor oil",
+    "category": "oil",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["thickening", "sealing", "growth-promoting"],
+    "notes": "Very thick and heavy. Best for high porosity or as a scalp treatment."
+  },
+  {
+    "name": "olive oil",
+    "category": "oil",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["moisturizing", "penetrating", "softening"],
+    "notes": "Medium-heavy oil. Can cause buildup on low porosity."
+  },
+  {
+    "name": "jojoba oil",
+    "category": "oil",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["light", "sebum-like", "balancing"],
+    "notes": "Lightweight oil that mimics natural sebum. Great for all hair types."
+  },
+  {
+    "name": "argan oil",
+    "category": "oil",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["light", "moisturizing", "shine-enhancing"],
+    "notes": "Lightweight and fast-absorbing. Suitable for all porosities."
+  },
+  {
+    "name": "grapeseed oil",
+    "category": "oil",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["light", "non-greasy", "moisturizing"],
+    "notes": "Very light oil. Won't weigh hair down."
+  },
+  {
+    "name": "sweet almond oil",
+    "category": "oil",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["light", "moisturizing", "softening"],
+    "notes": "Lightweight and easily absorbed."
+  },
+  {
+    "name": "avocado oil",
+    "category": "oil",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["penetrating", "nourishing", "strengthening"],
+    "notes": "Rich and heavy. Best for high porosity or damaged hair."
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "dimethicone",
+    "category": "silicone",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["coating", "shine-enhancing", "heat-protecting"],
+    "notes": "Non-water-soluble. Requires sulfate shampoo to remove. Can cause buildup."
+  },
+  {
+    "name": "cyclopentasiloxane",
+    "category": "silicone",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["light", "evaporating", "smoothing"],
+    "notes": "Evaporating silicone. Won't cause buildup."
+  },
+  {
+    "name": "amodimethicone",
+    "category": "silicone",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["conditioning", "water-soluble", "smoothing"],
+    "notes": "Water-soluble silicone. Washes out easily."
+  },
+  {
+    "name": "dimethicone copolyol",
+    "category": "silicone",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["water-soluble", "conditioning", "moisturizing"],
+    "notes": "Water-soluble silicone. Safe for all hair types."
+  },
+  {
+    "name": "phenyl trimethicone",
+    "category": "silicone",
+    "heavy": true,
+    "low_porosity_safe": false,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["coating", "shine-enhancing", "heat-protecting"],
+    "notes": "Non-water-soluble. Can cause buildup on low porosity."
+  }
+]

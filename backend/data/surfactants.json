@@ -1,0 +1,42 @@
+[
+  {
+    "name": "sodium lauryl sulfate",
+    "category": "surfactant",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": false,
+    "scalp_safe": false,
+    "properties": ["cleansing", "harsh", "stripping"],
+    "notes": "Harsh sulfate. Can strip natural oils and dry out hair."
+  },
+  {
+    "name": "sodium laureth sulfate",
+    "category": "surfactant",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": false,
+    "scalp_safe": true,
+    "properties": ["cleansing", "moderate", "effective"],
+    "notes": "Milder than SLS but still drying for some hair types."
+  },
+  {
+    "name": "cocamidopropyl betaine",
+    "category": "surfactant",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["gentle", "conditioning", "mild-cleansing"],
+    "notes": "Gentle surfactant. Safe for all hair types."
+  },
+  {
+    "name": "decyl glucoside",
+    "category": "surfactant",
+    "heavy": false,
+    "low_porosity_safe": true,
+    "high_porosity_safe": true,
+    "scalp_safe": true,
+    "properties": ["gentle", "natural", "mild-cleansing"],
+    "notes": "Very gentle natural surfactant. Ideal for sensitive scalps."
+  }
+]
