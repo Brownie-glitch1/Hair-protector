@@ -34,7 +34,8 @@ function RegisterPage() {
       await register(formData.email, formData.password, formData.full_name);
       navigate('/onboarding');
     } catch (err) {
-      setError(err.response?.data?.detail || 'Registration failed. Please try again.');
+      const errorMsg = err.response?.data?.detail || err.response?.data?.message || err.message || 'Registration failed. Please try again.';
+      setError(typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg));
     } finally {
       setLoading(false);
     }
