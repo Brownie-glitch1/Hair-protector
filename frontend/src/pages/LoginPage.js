@@ -21,7 +21,8 @@ function LoginPage() {
       await login(formData.email, formData.password);
       navigate('/scan');
     } catch (err) {
-      setError(err.response?.data?.detail || 'Login failed. Please try again.');
+      const errorMsg = err.response?.data?.detail || err.response?.data?.message || err.message || 'Login failed. Please try again.';
+      setError(typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg));
     } finally {
       setLoading(false);
     }
