@@ -53,7 +53,8 @@ function ScanPage() {
       const response = await scanAPI.scanByBarcode({ barcode: formData.barcode });
       navigate(`/results/${response.data.scan_id}`);
     } catch (err) {
-      setError(err.response?.data?.detail || 'Product not found with this barcode.');
+      const errorMsg = err.response?.data?.detail || err.response?.data?.message || err.message || 'Product not found with this barcode.';
+      setError(typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg));
     } finally {
       setLoading(false);
     }
