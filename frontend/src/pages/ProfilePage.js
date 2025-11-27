@@ -24,7 +24,8 @@ function ProfilePage() {
       setSuccess('Profile updated successfully!');
       setEditing(false);
     } catch (err) {
-      setError('Failed to update profile');
+      const errorMsg = err.response?.data?.detail || err.response?.data?.message || err.message || 'Failed to update profile';
+      setError(typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg));
     } finally {
       setLoading(false);
     }
