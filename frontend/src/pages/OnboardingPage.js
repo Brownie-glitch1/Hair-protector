@@ -27,7 +27,8 @@ function OnboardingPage() {
       updateHairProfile(response.data);
       navigate('/scan');
     } catch (err) {
-      setError(err.response?.data?.detail || 'Failed to create profile');
+      const errorMsg = err.response?.data?.detail || err.response?.data?.message || err.message || 'Failed to create profile';
+      setError(typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg));
     } finally {
       setLoading(false);
     }
