@@ -207,6 +207,36 @@ function ScanPage() {
             </div>
           )}
 
+          {/* Search Product Tab */}
+          {activeTab === 'search' && (
+            <form onSubmit={handleProductSearch} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Search by Brand & Product Name
+                </label>
+                <input
+                  type="text"
+                  value={formData.search_query}
+                  onChange={(e) => setFormData({ ...formData, search_query: e.target.value })}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="e.g., Shea Moisture Curl Cream"
+                  required
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  Search for products by brand name, product name, or both
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full py-4 bg-primary-600 text-white rounded-lg font-semibold text-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition shadow-lg"
+              >
+                {loading ? 'Searching...' : 'Search & Analyze'}
+              </button>
+            </form>
+          )}
+
           {/* Paste Ingredients Tab */}
           {activeTab === 'paste' && (
             <form onSubmit={handleScanByIngredients} className="space-y-4">
