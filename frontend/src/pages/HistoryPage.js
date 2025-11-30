@@ -43,14 +43,7 @@ function HistoryPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white shadow">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <Link to="/scan" className="text-gray-600 hover:text-gray-900">
-              ← Back
-            </Link>
-            <Link to="/profile" className="text-primary-600 hover:underline">
-              Profile
-            </Link>
-          </div>
+          <h1 className="text-2xl font-bold text-gray-900">Scan History</h1>
         </div>
       </div>
 
