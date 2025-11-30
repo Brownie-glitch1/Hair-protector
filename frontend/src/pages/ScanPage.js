@@ -23,8 +23,46 @@ function ScanPage() {
   React.useEffect(() => {
     if (!hairProfile) {
       navigate('/onboarding');
+    } else {
+      fetchRecentScans();
     }
   }, [hairProfile, navigate]);
+
+  const fetchRecentScans = async () => {
+    try {
+      const response = await scanAPI.getHistory({ limit: 3 });
+      setRecentScans(response.data);
+    } catch (err) {
+      console.error('Failed to fetch recent scans:', err);
+    }
+  };
+
+  const handleProductSearch = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await productAPI.search(formData.search_query);
+      if (response.data && response.data.length > 0) {
+        // Use the first matching product
+        const product = response.data[0];
+        const scanResponse = await scanAPI.scanByIngredients({
+          ingredients_text: product.ingredients_text,
+          product_name: product.name,
+          product_brand: product.brand,
+          product_category: product.category,
+        });
+        navigate(`/results/${scanResponse.data.scan_id}`);
+      } else {
+        setError('No products found. Please try manual ingredient entry.');
+      }
+    } catch (err) {
+      handleApiError(err, setError, 'Product search failed.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleScanByIngredients = async (e) => {
     e.preventDefault();
