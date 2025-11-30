@@ -3,6 +3,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { scanAPI, productAPI } from '../utils/api';
 import { handleApiError } from '../utils/errorHandler';
+import BarcodeScanner from '../components/BarcodeScanner';
+import PermissionModal from '../components/PermissionModal';
 
 function ScanPage() {
   const navigate = useNavigate();
