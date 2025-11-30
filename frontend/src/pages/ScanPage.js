@@ -92,22 +92,9 @@ function ScanPage() {
       {/* Header */}
       <div className="bg-white shadow">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-900">
-              🔍 Product Scanner
-            </h1>
-            <div className="flex gap-3">
-              <Link to="/history" className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
-                History
-              </Link>
-              <Link to="/profile" className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
-                Profile
-              </Link>
-              <button onClick={logout} className="px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg">
-                Logout
-              </button>
-            </div>
-          </div>
+          <h1 className="text-2xl font-bold text-gray-900">
+            🔍 Product Scanner
+          </h1>
         </div>
       </div>
 
