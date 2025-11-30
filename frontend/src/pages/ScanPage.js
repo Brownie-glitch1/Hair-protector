@@ -94,18 +94,58 @@ function ScanPage() {
     }
   };
 
-  const handleScanByBarcode = async (e) => {
-    e.preventDefault();
+  const handleOpenBarcodeScanner = async () => {
+    // Check permission first
+    if (cameraPermission === 'granted') {
+      setShowScanner(true);
+    } else if (cameraPermission === 'denied') {
+      setShowPermissionModal(true);
+    } else {
+      // Try to request permission
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        stream.getTracks().forEach(track => track.stop());
+        setCameraPermission('granted');
+        setShowScanner(true);
+      } catch (err) {
+        if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+          setCameraPermission('denied');
+          setShowPermissionModal(true);
+        } else {
+          setError('Unable to access camera: ' + err.message);
+        }
+      }
+    }
+  };
+
+  const handleBarcodeScanned = async (barcode) => {
+    setShowScanner(false);
     setLoading(true);
     setError('');
 
     try {
-      const response = await scanAPI.scanByBarcode({ barcode: formData.barcode });
+      const response = await scanAPI.scanByBarcode({ barcode });
       navigate(`/results/${response.data.scan_id}`);
     } catch (err) {
       handleApiError(err, setError, 'Product not found with this barcode.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleRequestPermission = async () => {
+    setShowPermissionModal(false);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      stream.getTracks().forEach(track => track.stop());
+      await checkCameraPermission();
+      setShowScanner(true);
+    } catch (err) {
+      if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+        setError('Camera permission denied. Please enable it in Settings.');
+      } else {
+        setError('Unable to access camera: ' + err.message);
+      }
     }
   };
 
