@@ -105,36 +105,39 @@ function ScanPage() {
           </h2>
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-6 border-b overflow-x-auto">
+          <div className="grid grid-cols-3 gap-2 mb-6">
             <button
               onClick={() => setActiveTab('search')}
-              className={`px-4 py-3 font-semibold whitespace-nowrap ${
+              className={`py-3 px-2 rounded-lg font-semibold text-sm transition ${
                 activeTab === 'search'
-                  ? 'text-primary-600 border-b-2 border-primary-600'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              🔍 Search Product
+              <div className="text-xl mb-1">🔍</div>
+              <div>Search</div>
             </button>
             <button
               onClick={() => setActiveTab('paste')}
-              className={`px-4 py-3 font-semibold whitespace-nowrap ${
+              className={`py-3 px-2 rounded-lg font-semibold text-sm transition ${
                 activeTab === 'paste'
-                  ? 'text-primary-600 border-b-2 border-primary-600'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              📝 Paste Ingredients
+              <div className="text-xl mb-1">📝</div>
+              <div>Paste</div>
             </button>
             <button
               onClick={() => setActiveTab('barcode')}
-              className={`px-4 py-3 font-semibold whitespace-nowrap ${
+              className={`py-3 px-2 rounded-lg font-semibold text-sm transition ${
                 activeTab === 'barcode'
-                  ? 'text-primary-600 border-b-2 border-primary-600'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              🔢 Barcode
+              <div className="text-xl mb-1">🔢</div>
+              <div>Barcode</div>
             </button>
           </div>
 
