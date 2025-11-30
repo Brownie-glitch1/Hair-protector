@@ -326,6 +326,26 @@ function ScanPage() {
           )}
         </div>
       </div>
+
+      {/* Barcode Scanner Modal */}
+      {showScanner && (
+        <BarcodeScanner
+          onScan={handleBarcodeScanned}
+          onClose={() => setShowScanner(false)}
+          onPermissionDenied={() => {
+            setShowScanner(false);
+            setShowPermissionModal(true);
+          }}
+        />
+      )}
+
+      {/* Permission Request Modal */}
+      {showPermissionModal && (
+        <PermissionModal
+          onClose={() => setShowPermissionModal(false)}
+          onRequestPermission={handleRequestPermission}
+        />
+      )}
     </div>
   );
 }
