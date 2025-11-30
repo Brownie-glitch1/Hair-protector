@@ -28,7 +28,24 @@ function ScanPage() {
     if (!hairProfile) {
       navigate('/onboarding');
     }
+    checkCameraPermission();
   }, [hairProfile, navigate]);
+
+  const checkCameraPermission = async () => {
+    if (navigator.permissions && navigator.permissions.query) {
+      try {
+        const result = await navigator.permissions.query({ name: 'camera' });
+        setCameraPermission(result.state);
+        result.onchange = () => {
+          setCameraPermission(result.state);
+        };
+      } catch (err) {
+        setCameraPermission('unsupported');
+      }
+    } else {
+      setCameraPermission('unsupported');
+    }
+  };
 
   const handleProductSearch = async (e) => {
     e.preventDefault();
