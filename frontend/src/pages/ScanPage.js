@@ -14,9 +14,11 @@ function ScanPage() {
     product_brand: '',
     product_category: '',
     barcode: '',
+    search_query: '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [recentScans, setRecentScans] = useState([]);
 
   React.useEffect(() => {
     if (!hairProfile) {
