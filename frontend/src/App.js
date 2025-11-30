@@ -11,6 +11,12 @@ import ScanPage from './pages/ScanPage';
 import ResultsPage from './pages/ResultsPage';
 import ProfilePage from './pages/ProfilePage';
 import HistoryPage from './pages/HistoryPage';
+import SettingsPage from './pages/SettingsPage';
+import AccountSettingsPage from './pages/AccountSettingsPage';
+import PermissionsPage from './pages/PermissionsPage';
+
+// Components
+import BottomNav from './components/BottomNav';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
