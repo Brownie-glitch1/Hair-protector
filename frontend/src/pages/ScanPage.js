@@ -22,19 +22,8 @@ function ScanPage() {
   React.useEffect(() => {
     if (!hairProfile) {
       navigate('/onboarding');
-    } else {
-      fetchRecentScans();
     }
   }, [hairProfile, navigate]);
-
-  const fetchRecentScans = async () => {
-    try {
-      const response = await scanAPI.getHistory({ limit: 3 });
-      setRecentScans(response.data);
-    } catch (err) {
-      console.error('Failed to fetch recent scans:', err);
-    }
-  };
 
   const handleProductSearch = async (e) => {
     e.preventDefault();
