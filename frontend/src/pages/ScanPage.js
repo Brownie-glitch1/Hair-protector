@@ -124,23 +124,40 @@ function ScanPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 max-w-3xl">
-        {/* Hair Profile Card */}
-        {hairProfile && (
-          <div className="bg-gradient-to-r from-primary-500 to-purple-600 text-white rounded-xl p-6 mb-6">
-            <h3 className="font-semibold mb-2">Your Hair Profile</h3>
-            <div className="flex flex-wrap gap-3 text-sm">
-              <span className="bg-white/20 px-3 py-1 rounded-full">
-                {hairProfile.porosity} porosity
-              </span>
-              <span className="bg-white/20 px-3 py-1 rounded-full">
-                {hairProfile.curl_pattern} curl
-              </span>
-              <span className="bg-white/20 px-3 py-1 rounded-full">
-                {hairProfile.scalp_type} scalp
-              </span>
-              <span className="bg-white/20 px-3 py-1 rounded-full">
-                {hairProfile.density} density
-              </span>
+        {/* Recent Scans */}
+        {recentScans.length > 0 && (
+          <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-bold text-gray-900">Recent Scans</h3>
+              <Link to="/history" className="text-primary-600 hover:underline text-sm">
+                View All
+              </Link>
+            </div>
+            <div className="space-y-3">
+              {recentScans.map((scan) => (
+                <div
+                  key={scan.scan_id}
+                  onClick={() => navigate(`/results/${scan.scan_id}`)}
+                  className="flex justify-between items-center p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition"
+                >
+                  <div className="flex-1">
+                    <p className="font-medium text-gray-900 text-sm">
+                      {scan.product_name || 'Unnamed Product'}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {scan.product_brand && `${scan.product_brand} • `}
+                      {new Date(scan.created_at).toLocaleDateString()}
+                    </p>
+                  </div>
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    scan.verdict === 'GREAT' ? 'bg-green-100 text-green-700' :
+                    scan.verdict === 'CAUTION' ? 'bg-yellow-100 text-yellow-700' :
+                    'bg-red-100 text-red-700'
+                  }`}>
+                    {scan.verdict}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         )}
