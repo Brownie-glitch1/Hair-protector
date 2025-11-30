@@ -49,14 +49,7 @@ function ProfilePage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white shadow">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <Link to="/scan" className="text-gray-600 hover:text-gray-900">
-              ← Back
-            </Link>
-            <button onClick={logout} className="text-red-600 hover:underline">
-              Logout
-            </button>
-          </div>
+          <h1 className="text-2xl font-bold text-gray-900">My Profile</h1>
         </div>
       </div>
 
