@@ -11,6 +11,7 @@ function ProfilePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [recentScans, setRecentScans] = useState([]);
 
   const handleUpdate = async (e) => {
     e.preventDefault();
