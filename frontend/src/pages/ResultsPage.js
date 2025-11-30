@@ -70,29 +70,40 @@ function ResultsPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 max-w-3xl">
-        {/* Product Info */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            {scan.product_name || 'Product Analysis'}
-          </h1>
-          {scan.product_brand && (
-            <p className="text-gray-600 mb-2">by {scan.product_brand}</p>
-          )}
-          <div className="flex gap-2 text-sm text-gray-500">
-            <span>Scan type: {scan.scan_type}</span>
-            {scan.product_category && <span>• {scan.product_category}</span>}
+        {/* Product Info with Verdict */}
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
+          {/* Verdict Banner */}
+          <div className={`${config.bg} border-b-4 ${config.border} px-6 py-4`}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">{config.emoji}</span>
+                <div>
+                  <h2 className={`text-2xl font-bold ${config.text}`}>
+                    {scan.verdict}
+                  </h2>
+                  <p className="text-sm text-gray-700">
+                    Overall Score: {scan.overall_score}/100
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Verdict Card */}
-        <div className={`${config.bg} border-4 ${config.border} rounded-xl p-8 mb-6 text-center`}>
-          <div className="text-6xl mb-4">{config.emoji}</div>
-          <h2 className={`text-4xl font-bold ${config.text} mb-2`}>
-            {scan.verdict}
-          </h2>
-          <p className="text-lg text-gray-700">
-            Overall Score: {scan.overall_score}/100
-          </p>
+          
+          {/* Product Details */}
+          <div className="p-6">
+            <h1 className="text-xl font-bold text-gray-900 mb-2">
+              {scan.product_name || 'Product Analysis'}
+            </h1>
+            {scan.product_brand && (
+              <p className="text-gray-600 mb-2">Brand: {scan.product_brand}</p>
+            )}
+            <div className="flex gap-2 text-sm text-gray-500">
+              <span className="px-2 py-1 bg-gray-100 rounded">Scan: {scan.scan_type}</span>
+              {scan.product_category && (
+                <span className="px-2 py-1 bg-gray-100 rounded">{scan.product_category}</span>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Score Breakdown */}
