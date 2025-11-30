@@ -48,7 +48,6 @@ function HistoryPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8 max-w-3xl">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Scan History</h1>
 
         {scans.length === 0 ? (
           <div className="text-center py-12">
