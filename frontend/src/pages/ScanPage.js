@@ -298,32 +298,31 @@ function ScanPage() {
 
           {/* Barcode Tab */}
           {activeTab === 'barcode' && (
-            <form onSubmit={handleScanByBarcode} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Product Barcode / UPC
-                </label>
-                <input
-                  type="text"
-                  value={formData.barcode}
-                  onChange={(e) => setFormData({ ...formData, barcode: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500"
-                  placeholder="Enter barcode number"
-                  required
-                />
-                <p className="text-xs text-gray-500 mt-1">
-                  Enter the UPC/EAN barcode from the product
+            <div className="space-y-4">
+              <div className="text-center py-8">
+                <div className="text-6xl mb-4">📷</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Scan with Camera
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  Point your camera at the product barcode for instant scanning
                 </p>
-              </div>
+                
+                <button
+                  onClick={handleOpenBarcodeScanner}
+                  disabled={loading}
+                  className="px-8 py-4 bg-primary-600 text-white rounded-lg font-semibold text-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition shadow-lg"
+                >
+                  {loading ? 'Processing...' : '📸 Open Camera Scanner'}
+                </button>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full py-4 bg-primary-600 text-white rounded-lg font-semibold text-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition shadow-lg"
-              >
-                {loading ? 'Looking up...' : 'Scan Barcode'}
-              </button>
-            </form>
+                {cameraPermission === 'denied' && (
+                  <p className="text-sm text-red-600 mt-4">
+                    Camera permission is required. Click above to enable it.
+                  </p>
+                )}
+              </div>
+            </div>
           )}
         </div>
       </div>
