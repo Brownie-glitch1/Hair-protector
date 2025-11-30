@@ -6,7 +6,7 @@ import { handleApiError } from '../utils/errorHandler';
 
 function ScanPage() {
   const navigate = useNavigate();
-  const { hairProfile, logout } = useAuth();
+  const { hairProfile } = useAuth();
   const [activeTab, setActiveTab] = useState('paste');
   const [formData, setFormData] = useState({
     ingredients_text: '',
