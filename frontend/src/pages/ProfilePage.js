@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { hairProfileAPI, scanAPI } from '../utils/api';
 
 function ProfilePage() {
-  const { user, hairProfile, updateHairProfile, logout } = useAuth();
+  const { user, hairProfile, updateHairProfile } = useAuth();
   const navigate = useNavigate();
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState(hairProfile || {});
