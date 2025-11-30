@@ -168,10 +168,20 @@ function ScanPage() {
           </h2>
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-6 border-b">
+          <div className="flex gap-2 mb-6 border-b overflow-x-auto">
+            <button
+              onClick={() => setActiveTab('search')}
+              className={`px-4 py-3 font-semibold whitespace-nowrap ${
+                activeTab === 'search'
+                  ? 'text-primary-600 border-b-2 border-primary-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              🔍 Search Product
+            </button>
             <button
               onClick={() => setActiveTab('paste')}
-              className={`px-6 py-3 font-semibold ${
+              className={`px-4 py-3 font-semibold whitespace-nowrap ${
                 activeTab === 'paste'
                   ? 'text-primary-600 border-b-2 border-primary-600'
                   : 'text-gray-600 hover:text-gray-900'
@@ -181,7 +191,7 @@ function ScanPage() {
             </button>
             <button
               onClick={() => setActiveTab('barcode')}
-              className={`px-6 py-3 font-semibold ${
+              className={`px-4 py-3 font-semibold whitespace-nowrap ${
                 activeTab === 'barcode'
                   ? 'text-primary-600 border-b-2 border-primary-600'
                   : 'text-gray-600 hover:text-gray-900'
