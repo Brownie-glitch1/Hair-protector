@@ -13,6 +13,19 @@ function ProfilePage() {
   const [success, setSuccess] = useState('');
   const [recentScans, setRecentScans] = useState([]);
 
+  useEffect(() => {
+    fetchRecentScans();
+  }, []);
+
+  const fetchRecentScans = async () => {
+    try {
+      const response = await scanAPI.getHistory({ limit: 3 });
+      setRecentScans(response.data);
+    } catch (err) {
+      console.error('Failed to fetch recent scans:', err);
+    }
+  };
+
   const handleUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
