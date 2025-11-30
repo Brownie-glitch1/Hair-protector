@@ -194,13 +194,53 @@ function ProfilePage() {
           )}
         </div>
 
-        <div className="mt-6">
-          <Link
-            to="/history"
-            className="block w-full py-3 bg-gray-100 text-center rounded-lg font-semibold hover:bg-gray-200"
-          >
-            View Scan History
-          </Link>
+        {/* Scan History */}
+        <div className="mt-6 bg-white rounded-xl shadow-lg p-6">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-bold text-gray-900">Scan History</h2>
+            <Link to="/history" className="text-primary-600 hover:underline text-sm">
+              View All
+            </Link>
+          </div>
+          
+          {recentScans.length > 0 ? (
+            <div className="space-y-3">
+              {recentScans.map((scan) => (
+                <div
+                  key={scan.scan_id}
+                  onClick={() => navigate(`/results/${scan.scan_id}`)}
+                  className="flex justify-between items-center p-4 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition"
+                >
+                  <div className="flex-1">
+                    <p className="font-medium text-gray-900">
+                      {scan.product_name || 'Unnamed Product'}
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      {scan.product_brand && `${scan.product_brand} • `}
+                      {new Date(scan.created_at).toLocaleDateString()}
+                    </p>
+                  </div>
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    scan.verdict === 'GREAT' ? 'bg-green-100 text-green-700' :
+                    scan.verdict === 'CAUTION' ? 'bg-yellow-100 text-yellow-700' :
+                    'bg-red-100 text-red-700'
+                  }`}>
+                    {scan.verdict}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8">
+              <p className="text-gray-500 mb-4">No scans yet</p>
+              <button
+                onClick={() => navigate('/scan')}
+                className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
+              >
+                Scan Your First Product
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
