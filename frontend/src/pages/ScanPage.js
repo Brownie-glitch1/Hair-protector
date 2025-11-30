@@ -18,7 +18,6 @@ function ScanPage() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [recentScans, setRecentScans] = useState([]);
 
   React.useEffect(() => {
     if (!hairProfile) {
