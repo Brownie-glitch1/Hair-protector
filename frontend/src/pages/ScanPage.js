@@ -20,6 +20,9 @@ function ScanPage() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [showScanner, setShowScanner] = useState(false);
+  const [showPermissionModal, setShowPermissionModal] = useState(false);
+  const [cameraPermission, setCameraPermission] = useState('unknown');
 
   React.useEffect(() => {
     if (!hairProfile) {
